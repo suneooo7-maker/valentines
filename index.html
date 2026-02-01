@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.25);
+      padding: 30px;
+      border-radius: 20px;
+      width: 85%;
+      max-width: 350px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .tap {
+      margin-top: 15px;
+      font-size: 0.85em;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" onclick="nextSlide()">
+    <h1 id="title">Hey ❤️</h1>
+    <p id="text">Tap anywhere</p>
+    <div class="tap">(tap the card)</div>
+  </div>
+
+  <script>
+    let slide = 0;
+
+    const slides = [
+      ["Hey ❤️", "I made this just for you"],
+      ["I just wanted to say…", "You mean more to me than I show"],
+      ["Being honest,", "you make my days feel lighter"],
+      ["No pressure,", "no expectations"],
+      ["Just this 💗", "I’m really glad you’re in my life"],
+      ["Happy Valentine’s Day 🌸", "— from someone who cares"]
+    ];
+
+    function nextSlide() {
+      slide = (slide + 1) % slides.length;
+      document.getElementById("title").innerText = slides[slide][0];
+      document.getElementById("text").innerText = slides[slide][1];
+    }
+  </script>
+
+</body>
+</html>
